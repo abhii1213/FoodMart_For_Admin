@@ -26,7 +26,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.use('/foods', displayFoodData);
+// app.use('/foods', displayFoodData);
+app.use('/',async(req,res)=>{
+  res.status(200).json({
+    message:"okay"
+  })
+})
 
 const PORT = process.env.PORT || 8080;
 
